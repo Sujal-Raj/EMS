@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import FormHeader from '../OtherComponents/FormHeader';
 
-function Login() {
-
+function Login({HandleLogin}) {
+    
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const submitHandler = (e)=>{
         e.preventDefault();
-        
+        HandleLogin(email, password);
         console.log(email);
         console.log(password);
         
@@ -41,7 +41,7 @@ function Login() {
             </div>
             <div className='w-[80%] m-2 bg-emerald-500 flex items-center justify-center font-bold text-xl rounded-lg'>
                 {/* <label htmlFor="email">Email: </label> */}
-                <input className=' text-white outline-none px-2 py-2 rounded-lg w-full font-bold' type="submit" name="" id="email" placeholder='Enter your password' />
+                <input className=' text-white outline-none px-2 py-2 rounded-lg w-full font-bold' type="submit" />
                 {/* <button className='py-2'>Submit</button> */}
             </div>
         </form>
