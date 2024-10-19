@@ -10,6 +10,7 @@ import { AuthContext } from './Context/AuthProvider'
 
 function App() {
   const [user, setUser] = useState(null)
+  const [loggedInUserData, setLoggedInUserData] = useState(null)
 
   const AuthData = useContext(AuthContext)
   // console.log(AuthData)
@@ -23,11 +24,11 @@ function App() {
     // localStorage.clear()
     if (AuthData){
        const loggedInUser = localStorage.getItem("loggedInUser");
-      //  if(loggedInUser){
-      //    setUser(JSON.parse(loggedInUser).role);
-      //  }
+       if(loggedInUser){
+         setUser(JSON.parse(loggedInUser).role);
+         setLoggedInUserData(JSON.parse(loggedInUser).data)
+       }
     }
-  
   }, [AuthData])
   
 
@@ -40,6 +41,9 @@ function App() {
     else if(AuthData && AuthData.employees.find((e)=>email == e.email && password == e.password)){
       setUser("employee");
       localStorage.setItem("loggedInUser", JSON.stringify({role:"employee"}));
+      const employeeData = AuthData.employees.find((e)=>email == e.email && password == e.password);
+      setLoggedInUserData(employeeData);
+      localStorage.setItem("loggedInUser", JSON.stringify({ role: "employee", data: employeeData }));
 
     }
     else{
@@ -53,7 +57,7 @@ function App() {
     {!user ? <Login HandleLogin = {handleLogin} /> : " "}
     {/* {user == "admin" ? <AdminDashboard/> : <EmployeeDashboard/>} */}
     {user == "admin" && <AdminDashboard/>}
-    {user == "employee" && <EmployeeDashboard/>} 
+    {user == "employee" && <EmployeeDashboard data={loggedInUserData}/>} 
       {/* <Login/>  */}
       {/* <EmployeeDashboard/> */}
       {/* <AdminDashboard/> */}

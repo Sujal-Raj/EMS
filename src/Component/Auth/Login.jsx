@@ -9,8 +9,9 @@ function Login({HandleLogin}) {
     const submitHandler = (e)=>{
         e.preventDefault();
         HandleLogin(email, password);
-        console.log(email);
-        console.log(password);
+
+        // console.log(email);
+        // console.log(password);
         
         setEmail("");
         setPassword("");
@@ -37,7 +38,7 @@ function Login({HandleLogin}) {
                 <input
                 value={password}
                 onChange={(e)=>setPassword(e.target.value)}
-                className=' text-black outline-none px-2 py-1 rounded-lg w-full font-semibold' type="password" name="" id="email" placeholder='Enter your password' />
+                className=' text-black outline-none px-2 py-1 rounded-lg w-full font-semibold' type="password" name="" id="password" placeholder='Enter your password' />
             </div>
             <div className='w-[80%] m-2 bg-emerald-500 flex items-center justify-center font-bold text-xl rounded-lg'>
                 {/* <label htmlFor="email">Email: </label> */}

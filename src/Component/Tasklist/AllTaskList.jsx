@@ -1,6 +1,7 @@
 import React from 'react'
 
-function AllTaskList() {
+function AllTaskList({data}) {
+    // console.log(data)
   return (
     <>
     <div id='alltask' className='mt-20 w-full flex flex-nowrap overflow-x-auto gap-5 py-5 px-4'>        
