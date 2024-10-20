@@ -85,7 +85,7 @@ const employees = [
     "name": "Aarav Sharma",
     "email": "employee1@example.com",
     "password": "123",
-    "task": {
+    "task": [{
       "newtask": true,
       "completed": false,
       "accepted": true,
@@ -94,7 +94,7 @@ const employees = [
       "taskdescription": "Design a responsive homepage for the company website.",
       "date": "2024-10-18",
       "category": "Design"
-    },
+    }],
     "taskNumbers": {
       "newTasks": 1,
       "activeTasks": 1,
@@ -107,7 +107,7 @@ const employees = [
     "name": "Ishaan Patel",
     "email": "employee2@example.com",
     "password": "123",
-    "task": {
+    "task": [{
       "newtask": false,
       "completed": true,
       "accepted": true,
@@ -116,7 +116,7 @@ const employees = [
       "taskdescription": "Integrate payment gateway API into the platform.",
       "date": "2024-09-30",
       "category": "Development"
-    },
+    }],
     "taskNumbers": {
       "newTasks": 0,
       "activeTasks": 0,
@@ -129,7 +129,7 @@ const employees = [
     "name": "Vihan Singh",
     "email": "employee3@example.com",
     "password": "123",
-    "task": {
+    "task": [{
       "newtask": true,
       "completed": false,
       "accepted": false,
@@ -138,7 +138,7 @@ const employees = [
       "taskdescription": "Conduct user testing for the new mobile app features.",
       "date": "2024-10-20",
       "category": "QA"
-    },
+    }],
     "taskNumbers": {
       "newTasks": 1,
       "activeTasks": 1,
@@ -151,7 +151,7 @@ const employees = [
     "name": "Kabir Reddy",
     "email": "employee4@example.com",
     "password": "123",
-    "task": {
+    "task": [{
       "newtask": false,
       "completed": true,
       "accepted": true,
@@ -160,7 +160,7 @@ const employees = [
       "taskdescription": "Perform routine maintenance on the company's servers.",
       "date": "2024-10-10",
       "category": "Operations"
-    },
+    }],
     "taskNumbers": {
       "newTasks": 0,
       "activeTasks": 0,
@@ -173,7 +173,7 @@ const employees = [
     "name": "Arjun Verma",
     "email": "employee5@example.com",
     "password": "123",
-    "task": {
+    "task": [{
       "newtask": false,
       "completed": false,
       "accepted": true,
@@ -182,7 +182,7 @@ const employees = [
       "taskdescription": "Prepare a proposal for a potential client in the financial sector.",
       "date": "2024-09-25",
       "category": "Business"
-    },
+    }],
     "taskNumbers": {
       "newTasks": 0,
       "activeTasks": 1,
@@ -198,6 +198,7 @@ const employees = [
 const admin = [
     {
         "id": 1,
+        "name": "Sujal raj",
         "email": "admin@example.com",
         "password": "admin123"
       }

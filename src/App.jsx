@@ -56,7 +56,7 @@ function App() {
     <>
     {!user ? <Login HandleLogin = {handleLogin} /> : " "}
     {/* {user == "admin" ? <AdminDashboard/> : <EmployeeDashboard/>} */}
-    {user == "admin" && <AdminDashboard/>}
+    {user == "admin" && <AdminDashboard data={loggedInUserData}  />}
     {user == "employee" && <EmployeeDashboard data={loggedInUserData}/>} 
       {/* <Login/>  */}
       {/* <EmployeeDashboard/> */}

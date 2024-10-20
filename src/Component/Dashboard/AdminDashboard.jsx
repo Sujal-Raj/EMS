@@ -3,10 +3,11 @@ import Header from '../OtherComponents/Header'
 import AdminForm from '../OtherComponents/AdminForm'
 import AdminTaskList from '../Tasklist/AdminTaskList'
 
-function AdminDashboard() {
+function AdminDashboard({data}) {
+  // console.log(data)
   return (
     <>
-    <Header/>
+    <Header data={data}/>
     <AdminForm/>
     <AdminTaskList/>
     </>
