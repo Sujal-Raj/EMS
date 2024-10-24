@@ -3,11 +3,11 @@ import Header from '../OtherComponents/Header'
 import TaskNumList from '../OtherComponents/TaskNumList'
 import AllTaskList from '../Tasklist/AllTaskList'
 
-function EmployeeDashboard({data}) {
+function EmployeeDashboard({data,changeUser}) {
    //console.log(data) // Print data from parent component
   return (
     <>
-    <Header data = {data}/>
+    <Header changeUser={changeUser} data = {data}/>
     <TaskNumList data = {data} />
     <AllTaskList data = {data}/>
     </>

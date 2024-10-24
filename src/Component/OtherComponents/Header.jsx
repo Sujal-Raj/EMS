@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-function Header({data}) {
+function Header({data,changeUser}) {
 
   const [username, setUsername] = useState("")
   // if(!data){
@@ -21,7 +21,8 @@ function Header({data}) {
   const logOutUser= ()=>{
     // localStorage.setItem("loggedInUser", " ");
     localStorage.removeItem("loggedInUser");
-    window.location.reload();
+    changeUser("");
+    // window.location.reload();
   }
 
 
