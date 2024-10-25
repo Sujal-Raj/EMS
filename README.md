@@ -38,10 +38,10 @@ To get a local copy up and running, follow these simple steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Sujal-Raj/employee-management-system.git
+   git clone https://github.com/Sujal-Raj/EMS.git
 
 2. Navigate to the project directory:
-   cd employee-management-system
+   cd EMS
 3. Install dependencies:
    npm install
 4. Run the application:
