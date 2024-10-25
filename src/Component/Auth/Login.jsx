@@ -24,21 +24,21 @@ function Login({HandleLogin}) {
     <div className="form h-[80vh]  flex items-center justify-center ">
         <form
             onSubmit={submitHandler}
-        className='border-2 border-emerald-500 rounded-lg w-[30%] m-auto flex flex-col items-center px-2 py-20'>
+        className='rounded-lg w-[30%] m-auto flex flex-col items-center px-2 py-20'>
             <div className='w-[80%] m-2'>
                 {/* <label htmlFor="email">Email: </label> */}
                 <input
                 value={email}
                 onChange={(e)=>setEmail(e.target.value)}
                  required 
-                 className=' text-black outline-none px-2 py-1 rounded-lg w-full font-semibold' type="email" name="" id="email" placeholder='Enter your email' />
+                 className=' bg-transparent border-2 border-white text-white  outline-none px-2 py-1 rounded-lg w-full font-semibold' type="email" name="" id="email" placeholder='Enter your email' />
             </div>
             <div className='w-[80%] m-2'>
                 {/* <label htmlFor="email">Email: </label> */}
                 <input
                 value={password}
                 onChange={(e)=>setPassword(e.target.value)}
-                className=' text-black outline-none px-2 py-1 rounded-lg w-full font-semibold' type="password" name="" id="password" placeholder='Enter your password' />
+                className=' bg-transparent border-2 border-white text-whiteoutline-none px-2 py-1 rounded-lg w-full font-semibold' type="password" name="" id="password" placeholder='Enter your password' />
             </div>
             <div className='w-[80%] m-2 bg-emerald-500 flex items-center justify-center font-bold text-xl rounded-lg'>
                 {/* <label htmlFor="email">Email: </label> */}

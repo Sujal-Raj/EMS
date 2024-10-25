@@ -10,37 +10,84 @@ function AdminForm() {
     const [category, setCategory] = useState("");
     const [description, setDescription] = useState("");
 
-    const [task, setTask] = useState({})
+    // const [task, setTask] = useState({})
 
 
-    const SubmitHandler=(e)=>{
-        e.preventDefault();
+    // const SubmitHandler=(e)=>{
+    //     e.preventDefault();
 
-        // setTask({tasktitle: tasktitle, category: category, taskdescription: description, priority: priority, assignedto: assignedto, date: duedate, newtask:true,completed:false, accepted: false,failed: false})
+    //     // setTask({tasktitle: tasktitle, category: category, taskdescription: description, priority: priority, assignedto: assignedto, date: duedate, newtask:true,completed:false, accepted: false,failed: false})
 
-        setTask({tasktitle,duedate,description,priority,category,assignedto,newtask:true,completed:false, accepted: false,failed: false})
+    //     setTask({tasktitle,duedate,description,priority,category,assignedto,newtask:true,completed:false, accepted: false,failed: false})
 
-        const data = JSON.parse(localStorage.getItem("employees"))
+    //     const data = JSON.parse(localStorage.getItem("employees"))
 
-        data.forEach(val => {
-            if(assignedto == val.name){
-                val.tasks.push(task)
-                val.taskNumbers.newTasks = val.taskNumbers.newTasks+1;
-            }
-        });
+    //     data.forEach(val => {
+    //         if(assignedto == val.name){
+    //             val.tasks.push(task)
+    //             val.taskNumbers.newTasks = val.taskNumbers.newTasks+1;
+    //             // console.log(val.tasks)
+    //         }
+    //     });
 
-        localStorage.setItem("employees", JSON.stringify(data));
+    //     localStorage.setItem("employees", JSON.stringify(data));
 
-        // setAssignedto("");
-        // setCategory("");
-        // setDescription("");
-        // setTasktitle("");
-        // setPriority("");
-        // setDuedate("");
+    //     // setAssignedto("");
+    //     // setCategory("");
+    //     // setDescription("");
+    //     // setTasktitle("");
+    //     // setPriority("");
+    //     // setDuedate("");
 
 
     
-    }
+    // }
+
+    const SubmitHandler = (e) => {
+        e.preventDefault();
+    
+        // Create the task object directly in the SubmitHandler
+        const newTask = {
+            tasktitle,
+            // duedate,
+            // description,
+            taskdescription: description,  // Rename 'description' to 'taskdescription'
+            date: duedate,                 // Rename 'duedate' to 'date'
+            priority,
+            category,
+            assignedto,
+            newtask: true,
+            completed: false,
+            accepted: false,
+            failed: false,
+        };
+        console.log(newTask);
+    
+        const data = JSON.parse(localStorage.getItem("employees"));
+    
+        // Find the employee and push the new task
+        data.forEach((val) => {
+            if (assignedto === val.name) {
+                val.tasks.push(newTask); // Use newTask directly
+                val.taskNumbers.newTasks = val.taskNumbers.newTasks + 1;
+                console.log(val.tasks);
+                // console.log(val.taskNumbers);
+            }
+        });
+    
+        localStorage.setItem("employees", JSON.stringify(data));
+    
+        // Clear input fields after submission
+        setAssignedto("");
+        setCategory("");
+        setDescription("");
+        setTasktitle("");
+        setPriority("");
+        setDuedate("");
+    };
+    
+
+
   return (
     <div className='min-h-[60vh]  py-4'>
         <FormHeader text="Create A Task"/>

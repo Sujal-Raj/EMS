@@ -15,7 +15,8 @@ function TaskNumList({data}) {
         </div>
         <div className='w-[20%] bg-yellow-600 rounded px-4 py-2'>
             <p className='text-4xl font-bold'>{data.taskNumbers.totalTasks}</p>
-            <p className='font-sm text-2xl'>Accepted</p>
+            {/* <p className='font-sm text-2xl'>Accepted</p> */}
+            <p className='font-sm text-2xl'>Active</p>
         </div>
         <div className='w-[20%] bg-green-600 rounded px-4 py-2'>
             <p className='text-4xl font-bold'>{data.taskNumbers.failedTasks}</p>
